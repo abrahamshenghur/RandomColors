@@ -16,19 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SON-gU-q4F">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ns-4X-Ss3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aBH-UE-IAK">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aBH-UE-IAK" id="ZFZ-w1-9Hr">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="tempButtonTapped:" destination="5ui-ch-TU8" eventType="touchUpInside" id="ubg-NG-8BF"/>
+                                    <outlet property="dataSource" destination="5ui-ch-TU8" id="sJS-UK-LNj"/>
+                                    <outlet property="delegate" destination="5ui-ch-TU8" id="Z0A-Ts-PnT"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mFu-pX-rPx"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SON-gU-q4F" firstAttribute="centerY" secondItem="P0C-hJ-Bjv" secondAttribute="centerY" id="BWe-rv-yP7"/>
-                            <constraint firstItem="SON-gU-q4F" firstAttribute="centerX" secondItem="P0C-hJ-Bjv" secondAttribute="centerX" id="gB4-s0-4Wz"/>
+                            <constraint firstItem="2ns-4X-Ss3" firstAttribute="top" secondItem="P0C-hJ-Bjv" secondAttribute="top" id="PMo-8w-6Ta"/>
+                            <constraint firstAttribute="trailing" secondItem="2ns-4X-Ss3" secondAttribute="trailing" id="bJH-a8-yyu"/>
+                            <constraint firstAttribute="bottom" secondItem="2ns-4X-Ss3" secondAttribute="bottom" constant="34" id="eiK-t2-wV0"/>
+                            <constraint firstItem="2ns-4X-Ss3" firstAttribute="leading" secondItem="P0C-hJ-Bjv" secondAttribute="leading" id="noK-VU-Lyx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Colors" id="86N-CC-3Co"/>
@@ -78,9 +91,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
